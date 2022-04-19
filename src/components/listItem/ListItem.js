@@ -1,9 +1,18 @@
 import React from 'react';
-import props from 'prop-types';
 
-const ListItem = () => {
+
+const ListItem = (props) => {
+  const {
+    id, 
+    name: {
+      english
+    },
+    type,
+    base
+  } = props.pokemon;
   return (
-    <div className="ListItem">
+    <div className="ListItem" key={id}>
+      {id} - {english} - {type} - {base.HP}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import props from 'prop-types';
 import pokedex from '../../helpers/pokemon'
+import ListItem from '../listItem/ListItem';
 
 
 
@@ -8,7 +8,7 @@ const List = () => {
   return (
     <div className="List">
        {pokedex.map((pokemon) => (
-        <div key={pokemon.id}>{pokemon.name.english}</div>
+        <ListItem key={pokemon.id} pokemon={pokemon} />
       ))}
     </div>
   )
