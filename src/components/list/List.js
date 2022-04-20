@@ -1,18 +1,28 @@
+import { Container, Grid } from '@mui/material';
 import React from 'react';
-import pokedex from '../../helpers/pokemon'
 import ListItem from '../listItem/ListItem';
 
 
 
-const List = () => {
+const List = (props) => {
+  const { pokedex } = props;
   return (
-    <div className="List">
-       {pokedex.map((pokemon) => (
-        <ListItem key={pokemon.id} pokemon={pokemon} />
-      ))}
-    </div>
+    <Container maxWidth={"sm"} className="list">
+      <Grid container spacing={2}>
+        {pokedex.map((pokemon) => (
+          <Grid item xs={12} key={pokemon.id}>
+            <ListItem pokemon={pokemon} />
+          </Grid>
+        ))}
+      </Grid>
+       
+    </Container>
   )
 }
 
 
 export default List;
+
+
+
+  
